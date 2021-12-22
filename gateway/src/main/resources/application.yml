@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: parent-service
+          uri: http://localhost:9001
+          predicates:
+            - Path=/parents/**
+        - id: child-service
+          uri: http://localhost:9002
+          predicates:
+            - Path=/children/**

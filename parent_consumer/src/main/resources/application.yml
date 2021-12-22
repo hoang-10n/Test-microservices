@@ -1,0 +1,11 @@
+server:
+  port: 9011
+spring:
+  kafka:
+    bootstrap-servers: ${kafka_bootstrap_servers:localhost:19092}
+    consumer:
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
